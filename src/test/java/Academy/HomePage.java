@@ -14,16 +14,16 @@ public class HomePage extends base {
     public WebDriver driver;
     public static Logger log = LogManager.getLogger(base.class.getName());
 
-    @BeforeMethod
+    @BeforeTest
     public void initialize() throws IOException {
-        driver=initializeDriver();
-        driver.get(prop.getProperty("url"));
+        driver = initializeDriver();
     }
 
-    @Test(dataProvider="getLoginData")
+    @Test(dataProvider = "getLoginData")
     public void basePageNavigation(String username, String password) throws IOException, InterruptedException {
+        driver.get(prop.getProperty("url"));
         LandingPage landingPage = new LandingPage(driver);
-        LoginPage loginPage  = landingPage.getLogin();
+        LoginPage loginPage = landingPage.getLogin();
         loginPage.getEmail().sendKeys(username);
         log.info("Email entered in username");
         loginPage.getPassword().sendKeys(password);
@@ -35,20 +35,20 @@ public class HomePage extends base {
         fp.submit().click();
     }
 
-    @AfterMethod
-    public void tearDown(){
+    @AfterTest
+    public void tearDown() {
         driver.close();
     }
 
     @DataProvider
-    public Object[] getLoginData(){
+    public Object[] getLoginData() {
         Object[][] data = new Object[2][2];
         //first data
-        data[0][0]="testusername1";
-        data[0][1]="password";
+        data[0][0] = "testusername1";
+        data[0][1] = "password";
         // second data
-        data[1][0]="testusername2";
-        data[1][1]="password";
+        data[1][0] = "testusername2";
+        data[1][1] = "password";
 
         return data;
     }

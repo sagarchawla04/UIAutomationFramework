@@ -11,24 +11,24 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    By email=By.id("user_email");
-    By password=By.id("user_password");
-    By loginButton=By.cssSelector("input[value='Log In']");
-    By forgotPassword=By.cssSelector("a[href*='password']");
+    private By email = By.id("user_email");
+    private By password = By.id("user_password");
+    private By loginButton = By.cssSelector("input[value='Log In']");
+    private By forgotPassword = By.cssSelector("a[href*='password']");
 
-    public WebElement getEmail(){
-        return  driver.findElement(email);
+    public WebElement getEmail() {
+        return driver.findElement(email);
     }
 
-    public WebElement getPassword(){
-        return  driver.findElement(password);
+    public WebElement getPassword() {
+        return driver.findElement(password);
     }
 
-    public WebElement getLogin(){
-        return  driver.findElement(loginButton);
+    public WebElement getLogin() {
+        return driver.findElement(loginButton);
     }
 
-    public ForgotPassword clickForgotPassword(){
+    public ForgotPassword clickForgotPassword() {
         driver.findElement(forgotPassword).click();
         return new ForgotPassword(driver);
     }

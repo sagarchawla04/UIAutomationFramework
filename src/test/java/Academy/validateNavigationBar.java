@@ -11,13 +11,13 @@ import pageObjects.LandingPage;
 
 import java.io.IOException;
 
-public class validateNavigationBar extends  base{
+public class validateNavigationBar extends base {
     public WebDriver driver;
     public static Logger log = LogManager.getLogger(base.class.getName());
 
     @BeforeTest
     public void initialize() throws IOException {
-        driver=initializeDriver();
+        driver = initializeDriver();
         driver.get(prop.getProperty("url"));
     }
 
@@ -30,7 +30,7 @@ public class validateNavigationBar extends  base{
     }
 
     @AfterTest
-    public void tearDown(){
+    public void tearDown() {
         driver.close();
     }
 }
