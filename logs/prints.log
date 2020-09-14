@@ -1,0 +1,4 @@
+12:08:23.395 [TestNG-tests-1] INFO  Academy.base - Login button clicked
+12:08:45.001 [TestNG-tests-1] INFO  Academy.base - Email entered in username
+12:08:45.166 [TestNG-tests-1] INFO  Academy.base - Password entered in password input field
+12:08:45.388 [TestNG-tests-1] INFO  Academy.base - Login button clicked

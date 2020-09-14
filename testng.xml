@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests">
+    <test name="Validating login">
+        <classes>
+            <class name="Academy.HomePage"/>
+        </classes>
+    </test>
+    <test name="Validating Navigation bar on home page">
+        <classes>
+            <class name="Academy.validateNavigationBar"/>
+        </classes>
+    </test>
+    <test name="Validating title of landing page">
+        <classes>
+            <class name="Academy.validateTitle"/>
+        </classes>
+    </test>
+</suite>
