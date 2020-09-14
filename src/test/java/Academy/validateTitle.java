@@ -27,9 +27,8 @@ public class validateTitle extends  base{
     @Test
     public void validatePageTitle() throws IOException {
         LandingPage landingPage = new LandingPage(driver);
-        Assert.assertEquals(landingPage.getTitle().getText(),"FEATURED COURSES");
+        Assert.assertEquals(landingPage.getTitle().getText(),"FEATURED COURSES1");
         log.info("Successfully validated title message");
-
     }
 
     @AfterTest

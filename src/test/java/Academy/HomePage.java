@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
+import pageObjects.ForgotPassword;
 import pageObjects.LandingPage;
 import pageObjects.LoginPage;
 
@@ -22,14 +23,16 @@ public class HomePage extends base {
     @Test(dataProvider="getLoginData")
     public void basePageNavigation(String username, String password) throws IOException, InterruptedException {
         LandingPage landingPage = new LandingPage(driver);
-        landingPage.getLogin().click();
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage  = landingPage.getLogin();
         loginPage.getEmail().sendKeys(username);
         log.info("Email entered in username");
         loginPage.getPassword().sendKeys(password);
         log.info("Password entered in password input field");
         loginPage.getLogin().click();
         log.info("Login button clicked");
+        ForgotPassword fp = loginPage.clickForgotPassword();
+        fp.getEmail().sendKeys("Abcd");
+        fp.submit().click();
     }
 
     @AfterMethod

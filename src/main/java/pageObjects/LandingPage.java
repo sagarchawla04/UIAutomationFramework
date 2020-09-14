@@ -15,9 +15,11 @@ public class LandingPage {
         this.driver = driver;
     }
 
-    public WebElement getLogin() throws InterruptedException {
+    public LoginPage getLogin() throws InterruptedException {
         Thread.sleep(2);
-        return driver.findElement(signin);
+        driver.findElement(signin).click();
+        LoginPage lp = new LoginPage(driver);
+        return lp;
     }
 
     public WebElement getTitle(){

@@ -1,3 +1,4 @@
 pageObjects\LandingPage.class
 pageObjects\LoginPage.class
 Academy\base.class
+Academy\ExtentReporterNg.class
